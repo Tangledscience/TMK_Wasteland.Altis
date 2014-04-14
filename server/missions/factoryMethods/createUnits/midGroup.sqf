@@ -1,101 +1,96 @@
 //	@file Version: 1.0
-//	@file Name: midGroup.sqf
-//	@file Author: [404] Deadbeat, [404] Costlyy, AgentRev
+//	@file Name: largeGroup.sqf
+//	@file Author: [404] Deadbeat, [404] Costlyy
 //	@file Created: 08/12/2012 21:58
 //	@file Args:
+//
+// modified 11-04-2014 TMK Khan
+// becomes mid group with 10 soldiers
+// loadouts WIP
+//
 
 if (!isServer) exitWith {};
 
-private ["_group", "_pos", "_leader", "_man2", "_man3", "_man4", "_man5", "_man6", "_man7"];
+private ["_group","_pos","_leader","_man2","_man3","_man4","_man5","_man6","_man7","_man8","_man9","_man10"];
 
 _group = _this select 0;
 _pos = _this select 1;
 
-// Leader
-_leader = _group createUnit ["C_man_polo_1_F", [(_pos select 0) + 10, _pos select 1, 0], [], 1, "Form"];
-removeAllAssignedItems _leader;
-_leader addUniform "U_B_CombatUniform_mcam";
-_leader addVest "V_PlateCarrier1_rgr";
-_leader addBackpack "B_AssaultPack_rgr";
-_leader addMagazine "30Rnd_556x45_Stanag";
-_leader addWeapon "arifle_TRG21_F";
-_leader addMagazine "30Rnd_556x45_Stanag";
-_leader addMagazine "30Rnd_556x45_Stanag";
-_leader addMagazine "RPG32_F";
-_leader addWeapon "launch_RPG32_F";
-_leader addMagazine "RPG32_F";
+//Anti Air no weapon
+_leader = _group createunit ["C_man_polo_1_F", [(_pos select 0) + 30, _pos select 1, 0], [], 0.5, "Form"];
+_leader addMagazine "Strela";
+_leader addWeapon "Strela";
+_leader addMagazine "30Rnd_545x39_AK";
+_leader addMagazine "30Rnd_545x39_AK";
+_leader addMagazine "30Rnd_545x39_AK";
+_leader addWeapon "AKS_74_U";
 
-// Rifleman
-_man2 = _group createUnit ["C_man_polo_2_F", [(_pos select 0) - 30, _pos select 1, 0], [], 1, "Form"];
-removeAllAssignedItems _man2;
-_man2 addUniform "U_B_CombatUniform_mcam_vest";
-_man2 addVest "V_PlateCarrier1_rgr";
-_man2 addMagazine "30Rnd_556x45_Stanag";
-_man2 addWeapon "arifle_TRG20_F";
-_man2 addMagazine "30Rnd_556x45_Stanag";
-_man2 addMagazine "30Rnd_556x45_Stanag";
+//Support
+_man2 = _group createunit ["C_man_polo_2_F", [(_pos select 0) - 30, _pos select 1, 0], [], 0.5, "Form"];
+_man2 addMagazine "75Rnd_545x39_RPK";
+_man2 addMagazine "75Rnd_545x39_RPK";
+_man2 addWeapon "RPK_74";
 
-// Rifleman
-_man3 = _group createUnit ["C_man_polo_3_F", [_pos select 0, (_pos select 1) + 30, 0], [], 1, "Form"];
-removeAllAssignedItems _man3;
-_man3 addUniform "U_B_CombatUniform_mcam_vest";
-_man3 addVest "V_PlateCarrier1_rgr";
-_man3 addMagazine "30Rnd_556x45_Stanag";
-_man3 addWeapon "arifle_TRG20_F";
-_man3 addMagazine "30Rnd_556x45_Stanag";
-_man3 addMagazine "30Rnd_556x45_Stanag";
+//Rifle_man
+_man3 = _group createunit ["C_man_polo_3_F", [_pos select 0, (_pos select 1) + 30, 0], [], 0.5, "Form"];
+_man3 addMagazine "30Rnd_762x39_AK47";
+_man3 addMagazine "30Rnd_762x39_AK47";
+_man3 addMagazine "30Rnd_762x39_AK47";
+_man3 addWeapon "AK_47_M";
 
-// Rifleman
-_man4 = _group createUnit ["C_man_polo_4_F", [_pos select 0, (_pos select 1) + 40, 0], [], 1, "Form"];
-removeAllAssignedItems _man4;
-_man4 addUniform "U_B_CombatUniform_mcam_vest";
-_man4 addVest "V_PlateCarrier1_rgr";
-_man4 addMagazine "30Rnd_556x45_Stanag";
-_man4 addWeapon "arifle_TRG20_F";
-_man4 addMagazine "30Rnd_556x45_Stanag";
-_man4 addMagazine "30Rnd_556x45_Stanag";
+//Rifle_man
+_man4 = _group createunit ["C_man_polo_4_F", [_pos select 0, (_pos select 1) + 40, 0], [], 0.5, "Form"];
+_man4 addMagazine "30Rnd_762x39_AK47";
+_man4 addMagazine "30Rnd_762x39_AK47";
+_man4 addMagazine "30Rnd_762x39_AK47";
+_man4 addWeapon "AK_47_M";
 
-// Rifleman
-_man5 = _group createUnit ["C_man_polo_5_F", [_pos select 0, (_pos select 1) + 40, 0], [], 1, "Form"];
-removeAllAssignedItems _man5;
-_man5 addUniform "U_B_CombatUniform_mcam_vest";
-_man5 addVest "V_PlateCarrier1_rgr";
-_man5 addMagazine "30Rnd_556x45_Stanag";
-_man5 addWeapon "arifle_TRG20_F";
-_man5 addMagazine "30Rnd_556x45_Stanag";
-_man5 addMagazine "30Rnd_556x45_Stanag";
+//Sniper
+_man5 = _group createunit ["C_man_polo_5_F", [_pos select 0, (_pos select 1) - 30, 0], [], 0.5, "Form"];
+_man5 addMagazine "10Rnd_762x54_SVD";
+_man5 addMagazine "10Rnd_762x54_SVD";
+_man5 addMagazine "10Rnd_762x54_SVD";
+_man5 addWeapon "SVD";
 
-// Machine gunner
-_man6 = _group createUnit ["C_man_polo_4_F", [_pos select 0, (_pos select 1) - 30, 0], [], 1, "Form"];
-removeAllAssignedItems _man6;
-_man6 addUniform "U_B_CombatUniform_mcam_vest";
-_man6 addVest "V_PlateCarrier1_rgr";
-_man6 addMagazine "150Rnd_762x51_Box";
-_man6 addWeapon "LMG_Zafir_F";
-_man6 addMagazine "150Rnd_762x51_Box";
-_man6 addMagazine "150Rnd_762x51_Box";
+//Grenadier
+_man6 = _group createunit ["C_man_polo_4_F", [_pos select 0, (_pos select 1) - 40, 0], [], 0.5, "Form"];
+_man6 addMagazine "30Rnd_545x39_AK";
+_man6 addMagazine "30Rnd_545x39_AK";
+_man6 addMagazine "30Rnd_545x39_AK";
+_man6 addMagazine "1Rnd_HE_GP25";
+_man6 addMagazine "1Rnd_HE_GP25";
+_man6 addMagazine "1Rnd_HE_GP25";
+_man6 addWeapon "AK_74_GL";
 
-// Grenadier
-_man7 = _group createUnit ["C_man_polo_3_F", [_pos select 0, (_pos select 1) - 40, 0], [], 1, "Form"];
-removeAllAssignedItems _man7;
-_man7 addUniform "U_B_CombatUniform_mcam_tshirt";
-_man7 addVest "V_PlateCarrier1_rgr";
-_man7 addMagazine "30Rnd_556x45_Stanag";
-_man7 addWeapon "arifle_TRG21_GL_F";
-_man7 addMagazine "30Rnd_556x45_Stanag";
-_man7 addMagazine "30Rnd_556x45_Stanag";
-_man7 addMagazine "1Rnd_HE_Grenade_shell";
-_man7 addMagazine "1Rnd_HE_Grenade_shell";
-_man7 addMagazine "1Rnd_HE_Grenade_shell";
+//Support
+_man7 = _group createunit ["C_man_polo_4_F", [(_pos select 0) - 40, _pos select 1, 0], [], 0.5, "Form"];
+_man7 addMagazine "75Rnd_545x39_RPK";
+_man7 addMagazine "75Rnd_545x39_RPK";
+_man7 addWeapon "RPK_74";
+
+//Grenadier
+_man8 = _group createunit ["C_man_polo_4_F", [_pos select 0, (_pos select 1) + 50, 0], [], 0.5, "Form"];
+_man8 addMagazine "30Rnd_545x39_AK";
+_man8 addMagazine "30Rnd_545x39_AK";
+_man8 addMagazine "30Rnd_545x39_AK";
+_man8 addMagazine "1Rnd_HE_GP25";
+_man8 addMagazine "1Rnd_HE_GP25";
+_man8 addMagazine "1Rnd_HE_GP25";
+_man8 addWeapon "AK_74_GL";
+
+//Sniper
+_man9 = _group createunit ["C_man_polo_4_F", [_pos select 0, (_pos select 1) - 50, 0], [], 0.5, "Form"];
+_man9 addMagazine "10Rnd_762x54_SVD";
+_man9 addMagazine "10Rnd_762x54_SVD";
+_man9 addMagazine "10Rnd_762x54_SVD";
+_man9 addWeapon "SVD";
+
+//Rifle_man
+_man10 = _group createunit ["C_man_polo_4_F", [_pos select 0, (_pos select 1) + 30, 0], [], 0.5, "Form"];
+_man10 addMagazine "30Rnd_762x39_AK47";
+_man10 addMagazine "30Rnd_762x39_AK47";
+_man10 addMagazine "30Rnd_762x39_AK47";
+_man10 addWeapon "AK_47_M";
 
 _leader = leader _group;
-
-{
-	_x spawn refillPrimaryAmmo;
-	_x spawn addMilCap;
-	_x call setMissionSkill;
-	_x addRating 9999999;
-	_x addEventHandler ["Killed", {_this call server_playerDied; (_this select 1) call removeNegativeScore}];
-} forEach units _group;
-
 [_group, _pos] call defendArea;
