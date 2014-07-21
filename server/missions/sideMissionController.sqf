@@ -2,6 +2,9 @@
 //	@file Name: sideMissionController.sqf
 //	@file Author: [404] Deadbeat, [404] Costlyy, [GoT] JoSchaap, Sanjo, AgentRev
 //	@file Created: 08/12/2012 15:19
+//
+//
+// @modification 11/04/2014 TMK Khan
 
 if (!isServer) exitWith {};
 #include "sideMissions\sideMissionDefines.sqf";
@@ -15,10 +18,11 @@ _SideMissions =
 [			// increase the number behind the mission (weight) to increase the chance of the mission to be selected
 	["mission_HostileHelicopter",0.5], 
 	["mission_MiniConvoy", 1], 
-	["mission_SunkenSupplys", 1],
+	["mission_SunkenSupplys", 0.5],
 	["mission_AirWreck", 1.5],
-	["mission_WepCache", 1.5],
-	["mission_Truck", 1]
+	["mission_WepCache", 1],
+	["mission_Truck", 1.5]
+	["mission_ReconVeh", 0.5],
 ]; 
 
 // _notPlayedSideMissions = +_SideMissions;
